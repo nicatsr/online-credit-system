@@ -9,7 +9,6 @@
 <!-- BEGIN: Page Vendor JS-->
 <script src="${assertBaseUrl}/vendors/js/charts/apexcharts.min.js"></script>
 <script src="${assertBaseUrl}/vendors/js/extensions/tether.min.js"></script>
-<script src="${assertBaseUrl}/vendors/js/extensions/shepherd.min.js"></script>
 <!-- END: Page Vendor JS-->
 
 <!-- BEGIN: Theme JS-->

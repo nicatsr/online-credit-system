@@ -15,4 +15,9 @@ public class AdminController {
 
         return new ModelAndView("admin/index");
     }
+
+    @GetMapping("/getDebtor")
+    public ModelAndView getAddDebtor(){
+        return new ModelAndView("admin/add-debtor");
+    }
 }

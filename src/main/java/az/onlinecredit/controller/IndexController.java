@@ -8,4 +8,9 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class IndexController {
 
+    @GetMapping("/")
+    public ModelAndView getIndex(){
+        return new ModelAndView("web/index");
+    }
+
 }
