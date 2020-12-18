@@ -10,6 +10,7 @@ public class IndexController {
 
     @GetMapping("/")
     public ModelAndView getIndex(){
+
         return new ModelAndView("web/index");
     }
 
