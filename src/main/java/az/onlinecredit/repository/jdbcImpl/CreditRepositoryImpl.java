@@ -1,8 +1,10 @@
 package az.onlinecredit.repository.jdbcImpl;
 
 import az.onlinecredit.model.database.Credit;
+import az.onlinecredit.model.database.CreditResult;
 import az.onlinecredit.model.database.Payment;
 import az.onlinecredit.repository.CreditRepository;
+import az.onlinecredit.repository.rowMapper.CreditResultRowMapper;
 import az.onlinecredit.repository.rowMapper.CreditRowMapper;
 import az.onlinecredit.repository.sql.CreditSql;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,7 +51,7 @@ public class CreditRepositoryImpl implements CreditRepository {
         Optional<Credit> optionalCredit = Optional.empty();
         Object[] args = new Object[]{finCode};
         List<Credit> list =
-                jdbcTemplate.query(CreditSql.GET_CREDIT_BY_FIN_CODE ,args , creditRowMapper);
+                jdbcTemplate.query(CreditSql.GET_CREDIT_BY_FIN_CODE , creditRowMapper , args);
 
         if (!list.isEmpty()){
             optionalCredit = Optional.of(list.get(0));
@@ -69,5 +71,25 @@ public class CreditRepositoryImpl implements CreditRepository {
         if (count < 1){
             throw new RuntimeException("error adding payment");
         }
+    }
+
+    @Autowired
+    private CreditResultRowMapper creditResultRowMapper;
+
+    @Override
+    public List<CreditResult> getCreditResultList() {
+        return jdbcTemplate.query(CreditSql.GET_CREDIT_RESULT_LIST, creditResultRowMapper);
+    }
+
+    @Override
+    public Optional<CreditResult> getCreditResultByFinCode(String finCode) {
+        Optional<CreditResult> optionalCreditResult = Optional.empty();
+        Object[] args = new Object[]{finCode};
+        List<CreditResult> list =
+                jdbcTemplate.query(CreditSql.GET_CREDIT_RESULT_BY_FIN_CODE , creditResultRowMapper ,args);
+        if (!list.isEmpty()){
+            optionalCreditResult = Optional.of(list.get(0));
+        }
+        return optionalCreditResult;
     }
 }

@@ -1,6 +1,7 @@
 package az.onlinecredit.service;
 
 import az.onlinecredit.model.database.Debtor;
+import az.onlinecredit.model.database.DebtorResult;
 import az.onlinecredit.model.database.Guarantor;
 import az.onlinecredit.model.dto.DebtorDto;
 
@@ -15,6 +16,8 @@ public interface DebtorService {
     Optional<Debtor> getDebtorByFinCode(String finCode);
 
     boolean checkSalary(Debtor debtor, BigDecimal monthlyPayment);
+
+    Optional<DebtorResult> getDebtorResultByFinCode(String finCode);
 
 
 }

@@ -1,10 +1,12 @@
 package az.onlinecredit.service;
 
 import az.onlinecredit.model.database.Credit;
+import az.onlinecredit.model.database.CreditResult;
 import az.onlinecredit.model.database.Payment;
 import az.onlinecredit.model.dto.CreditDto;
 
 import java.math.BigDecimal;
+import java.util.List;
 import java.util.Optional;
 
 public interface CreditService {
@@ -17,6 +19,10 @@ public interface CreditService {
     Optional<Credit> getCreditByFinCode(String finCode);
 
     void addPayment(Payment payment);
+
+    List<CreditResult> getCreditResultList();
+
+    Optional<CreditResult> getCreditResultByFinCode(String finCode);
 
 
 

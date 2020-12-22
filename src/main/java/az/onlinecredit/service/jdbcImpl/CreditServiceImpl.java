@@ -1,6 +1,7 @@
 package az.onlinecredit.service.jdbcImpl;
 
 import az.onlinecredit.model.database.Credit;
+import az.onlinecredit.model.database.CreditResult;
 import az.onlinecredit.model.database.Payment;
 import az.onlinecredit.model.dto.CreditDto;
 import az.onlinecredit.repository.CreditRepository;
@@ -11,6 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -89,5 +91,15 @@ public class CreditServiceImpl implements CreditService {
     @Override
     public void addPayment(Payment payment) {
         creditRepository.addPayment(payment);
+    }
+
+    @Override
+    public List<CreditResult> getCreditResultList() {
+        return creditRepository.getCreditResultList();
+    }
+
+    @Override
+    public Optional<CreditResult> getCreditResultByFinCode(String finCode) {
+        return creditRepository.getCreditResultByFinCode(finCode);
     }
 }

@@ -1,6 +1,7 @@
 package az.onlinecredit.repository;
 
 import az.onlinecredit.model.database.Debtor;
+import az.onlinecredit.model.database.DebtorResult;
 import az.onlinecredit.model.database.Guarantor;
 
 import java.util.Optional;
@@ -14,6 +15,8 @@ public interface DebtorRepository {
     void addDebtor(Debtor debtor);
 
     Optional<Debtor> getDebtorByFinCode(String finCode);
+
+    Optional<DebtorResult> getDebtorResultByFinCode(String finCode);
 
 
 

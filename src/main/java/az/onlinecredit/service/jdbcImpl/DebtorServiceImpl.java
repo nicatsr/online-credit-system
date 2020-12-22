@@ -1,6 +1,7 @@
 package az.onlinecredit.service.jdbcImpl;
 
 import az.onlinecredit.model.database.Debtor;
+import az.onlinecredit.model.database.DebtorResult;
 import az.onlinecredit.model.database.Guarantor;
 import az.onlinecredit.model.dto.DebtorDto;
 import az.onlinecredit.repository.DebtorRepository;
@@ -56,6 +57,11 @@ public class DebtorServiceImpl implements DebtorService {
         BigDecimal salaryPart = debtor.getSalary().multiply(BigDecimal.valueOf(30))
                 .divide(BigDecimal.valueOf(100));
         return salaryPart.compareTo(monthlyPayment) > 0;
+    }
+
+    @Override
+    public Optional<DebtorResult> getDebtorResultByFinCode(String finCode) {
+        return debtorRepository.getDebtorResultByFinCode(finCode);
     }
 
 }

@@ -21,4 +21,10 @@ public class DebtorSql {
             " from debtor " +
             " where fin_code = ? ";
 
+    public static String GET_DEBTOR_RESULT_BY_FIN_CODE = "select related_person , d.phone_number debtor_phone_number," +
+            " salary , d.fin_code debtor_fin_code , " +
+            "full_name guarantor_name , g.fin_code guarantor_fin_code  ,g.phone_number guarantor_phone_number " +
+            "from guarantor g join debtor d on d.guarantor_id = g.id " +
+            "where d.fin_code = ? ";
+
 }
