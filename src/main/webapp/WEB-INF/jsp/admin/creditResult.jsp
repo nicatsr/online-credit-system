@@ -41,8 +41,8 @@
                 </thead>
                 <tbody>
                 <tr>
-                    <td>${generalPayment}</td>
-                    <td>${monthlyPayment}</td>
+                    <td>${payment.generalPayment}</td>
+                    <td>${payment.monthlyPayment}</td>
                     <td>${creditDto.startDate}</td>
                     <td>${endDate}</td>
                     <td>
@@ -65,7 +65,7 @@
             <c:choose>
                 <c:when test="${salaryResult == true}">
                     <a href="/admin/addCredit" class="btn btn-primary" role="button">Krediti al</a>
-                    <a href="#" class="btn btn-primary" role="button">Excel yarat</a>
+                    <a href="/admin/excel" class="btn btn-primary" role="button">Excel yarat</a>
                 </c:when>
             </c:choose>
 

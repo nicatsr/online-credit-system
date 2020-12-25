@@ -52,6 +52,7 @@
                                 </div>
                             </div>
                         </form:form>
+                        <p style="color:red">${message}</p>
                     </div>
                 </div>
             </div>

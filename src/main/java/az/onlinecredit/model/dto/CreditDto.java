@@ -1,18 +1,31 @@
 package az.onlinecredit.model.dto;
 
+import javax.validation.constraints.*;
 import java.math.BigDecimal;
 import java.sql.Date;
 
 public class CreditDto {
 
+    @NotNull(message = "{credit.amount.notnull}")
+    @Min(value = 15000 , message = "{credit.amount.min}") @Max(value = 150_000 , message = "{credit.amount.max}")
+    @Positive(message = "{credit.amount.positive}")
     private BigDecimal baseAmount;
 
+    @NotNull(message = "{credit.interestRate.notnull}")
+    @Min(value =4 , message = "{credit.interestRate.min}") @Max(value =8 , message = "{credit.interestRate.max}")
+    @Positive(message = "{credit.interestRate.positive}")
     private BigDecimal interestRate;
 
-    private int periodWithMonth;
+    @NotNull(message = "{credit.periodWithMonth.notnull}")
+    @Min(value = 36 ,message = "{credit.periodWithMonth.min}") @Max(value = 360 , message = "{credit.periodWithMonth.max}")
+    @Positive(message = "{credit.periodWithMonth.positive}")
+    private Integer periodWithMonth;
+
 
     private Date startDate;
 
+    @NotNull(message = "{credit.finCode.notnull}")
+    @Size(min = 7, max = 7 ,message = "{credit.finCode.size}")
     private String finCode;
 
     public CreditDto() {
@@ -34,11 +47,11 @@ public class CreditDto {
         this.interestRate = interestRate;
     }
 
-    public int getPeriodWithMonth() {
+    public Integer getPeriodWithMonth() {
         return periodWithMonth;
     }
 
-    public void setPeriodWithMonth(int periodWithMonth) {
+    public void setPeriodWithMonth(Integer periodWithMonth) {
         this.periodWithMonth = periodWithMonth;
     }
 

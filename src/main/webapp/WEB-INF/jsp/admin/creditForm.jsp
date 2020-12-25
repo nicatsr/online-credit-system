@@ -10,6 +10,11 @@
     <jsp:include page="../../common/meta.jsp"/>
     <title>Admin dashboard</title>
     <jsp:include page="css.jsp"/>
+    <style>
+        .error{
+            color:red;
+        }
+    </style>
 
 </head>
 <!-- END: Head-->
@@ -43,18 +48,21 @@
                                         <div class="form-label-group">
                                             Miqdar
                                             <form:input path="baseAmount" cssClass="form-control"/>
+                                            <form:errors path="baseAmount" cssClass="error"/>
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-12">
                                         <div class="form-label-group">
                                             Faiz dərəcəsi
                                             <form:input path="interestRate" cssClass="form-control"/>
+                                            <form:errors path="interestRate" cssClass="error"/>
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-12">
                                         <div class="form-label-group">
                                             Ay ilə müddət
                                             <form:input path="periodWithMonth" cssClass="form-control"/>
+                                            <form:errors path="periodWithMonth" cssClass="error"/>
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-12">

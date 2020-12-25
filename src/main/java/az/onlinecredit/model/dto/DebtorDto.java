@@ -1,21 +1,39 @@
 package az.onlinecredit.model.dto;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Positive;
+import javax.validation.constraints.Size;
 import java.math.BigDecimal;
 
 public class DebtorDto {
 
+    @NotBlank(message = "{customer.name.notnull}")
+    @Size(min = 10 ,max = 30 , message = "{customer.name.length}")
     private String relatedPersonFullName;
 
+    @NotBlank(message = "{customer.phoneNumber.notBlank}")
+    @Size(min = 10 ,max = 10 , message = "{customer.phoneNumber.length}")
     private String phoneNumber;
 
+    @NotNull(message = "{customer.salary.notnull}")
+    @Positive(message = "{customer.salary.positive}")
     private BigDecimal salary;
 
+    @NotNull(message = "{credit.finCode.notnull}")
+    @Size(min = 7, max = 7 ,message = "{credit.finCode.size}")
     private String finCode;
 
+    @NotBlank(message = "{customer.name.notnull}")
+    @Size(min = 3 ,max = 25 , message = "{customer.name.length}")
     private String guarantorFullName;
 
+    @NotNull(message = "{credit.finCode.notnull}")
+    @Size(min = 7, max = 7 ,message = "{credit.finCode.size}")
     private String guarantorFinCode;
 
+    @NotBlank(message = "{customer.phoneNumber.notBlank}")
+    @Size(min = 10 ,max = 10 , message = "{customer.phoneNumber.length}")
     private String guarantorPhoneNumber;
 
     public DebtorDto() {

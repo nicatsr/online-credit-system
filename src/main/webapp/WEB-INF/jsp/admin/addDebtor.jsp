@@ -10,6 +10,11 @@
     <jsp:include page="../../common/meta.jsp"/>
     <title>Admin dashboard</title>
     <jsp:include page="css.jsp"/>
+    <style>
+        .error{
+            color:red;
+        }
+    </style>
 
 </head>
 <!-- END: Head-->
@@ -42,37 +47,45 @@
                                     <div class="col-md-6 col-12">
                                         <div class="form-label-group">
                                             <form:input path="relatedPersonFullName" cssClass="form-control" placeholder="Tam adınız"/>
+                                            <form:errors path="relatedPersonFullName" cssClass="error"/>
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-12">
                                         <div class="form-label-group">
-                                            <form:input path="phoneNumber" cssClass="form-control" placeholder="Telefon nömrəsi"/>
+                                            <form:input path="phoneNumber" cssClass="form-control" placeholder="Telefon nömrəsi , num:0551234567"/>
+                                            <form:errors path="phoneNumber" cssClass="error"/>
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-12">
                                         <div class="form-label-group">
                                             <form:input path="salary" cssClass="form-control" placeholder="Maaş"/>
+                                            <form:errors path="salary" cssClass="error"/>
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-12">
                                         <div class="form-label-group">
                                             <form:input path="finCode" cssClass="form-control" placeholder="Fin kod"/>
+                                            <form:errors path="finCode" cssClass="error"/>
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-12">
                                         <div class="form-label-group">
                                             <form:input path="guarantorFullName" cssClass="form-control" placeholder="Zaminin tam adı"/>
+                                            <form:errors path="guarantorFullName" cssClass="error"/>
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-12">
                                         <div class="form-label-group">
                                             <form:input path="guarantorPhoneNumber" cssClass="form-control"
-                                                        placeholder="Zaminin telefon nömrəsi"/>
+                                                        placeholder="Zaminin telefon nömrəsi , num:0551234567"/>
+                                            <form:errors path="guarantorPhoneNumber" cssClass="error"/>
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-12">
                                         <div class="form-label-group">
                                             <form:input path="guarantorFinCode" cssClass="form-control" placeholder="Zaminin fin kodu"/>
+                                            <form:errors path="guarantorFinCode" cssClass="error"/>
+
                                         </div>
                                     </div>
                                     <div class="col-12 offset-md-4">

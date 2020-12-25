@@ -23,6 +23,21 @@ public class CreditResult {
 
     private int status;
 
+    public CreditResult() {
+    }
+
+    public CreditResult(BigDecimal baseAmount, BigDecimal interestRate, BigDecimal generalPayment, BigDecimal monthlyPayment, int periodWithMonth, Date startDate, Date endDate, String finCode, int status) {
+        this.baseAmount = baseAmount;
+        this.interestRate = interestRate;
+        this.generalPayment = generalPayment;
+        this.monthlyPayment = monthlyPayment;
+        this.periodWithMonth = periodWithMonth;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.finCode = finCode;
+        this.status = status;
+    }
+
     public BigDecimal getBaseAmount() {
         return baseAmount;
     }
