@@ -1,5 +1,6 @@
 package az.onlinecredit.repository.jdbcImpl;
 
+import az.onlinecredit.model.Role;
 import az.onlinecredit.model.database.User;
 import az.onlinecredit.model.database.UserRole;
 import az.onlinecredit.repository.UserRepository;
@@ -73,5 +74,14 @@ public class UserRepositoryImpl implements UserRepository {
         }
 
         return optionalUser;
+    }
+
+
+    @Override
+    public List<Role> getUserRoles(long id) {
+        MapSqlParameterSource params = new MapSqlParameterSource("user_id", id);
+        List<Role> roles = namedParameterJdbcTemplate.query(UserSql.GET_USER_ROLES
+                , params, (rs, i) -> Role.fromValue(rs.getInt("role_id")));
+        return roles;
     }
 }

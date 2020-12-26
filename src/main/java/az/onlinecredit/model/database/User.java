@@ -1,6 +1,9 @@
 package az.onlinecredit.model.database;
 
+import az.onlinecredit.model.Role;
+
 import java.sql.Date;
+import java.util.List;
 
 public class User {
 
@@ -13,6 +16,8 @@ public class User {
     private String password;
 
     private Date registrationDate;
+
+    private List<Role> roleList;
 
 
     public long getId() {
@@ -55,6 +60,14 @@ public class User {
         this.registrationDate = registrationDate;
     }
 
+    public List<Role> getRoleList() {
+        return roleList;
+    }
+
+    public void setRoleList(List<Role> roleList) {
+        this.roleList = roleList;
+    }
+
     @Override
     public String toString() {
         return "User{" +
@@ -63,6 +76,7 @@ public class User {
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
                 ", registrationDate=" + registrationDate +
+                ", roleList=" + roleList +
                 '}';
     }
 }

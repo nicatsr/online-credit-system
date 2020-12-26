@@ -41,4 +41,10 @@ public class RegisterController {
         }
         return mav;
     }
+
+    @GetMapping("/login")
+    public ModelAndView login(){
+        ModelAndView mav = new ModelAndView("web/login");
+        return mav;
+    }
 }

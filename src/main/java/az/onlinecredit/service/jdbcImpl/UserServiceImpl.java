@@ -5,6 +5,7 @@ import az.onlinecredit.model.database.User;
 import az.onlinecredit.model.database.UserRole;
 import az.onlinecredit.model.dto.UserDto;
 import az.onlinecredit.repository.UserRepository;
+//import az.onlinecredit.service.PasswordService;
 import az.onlinecredit.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,6 +20,9 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private UserRepository userRepository;
 
+//    @Autowired
+//    private PasswordService passwordService;
+
     @Override
     public boolean emailExist(String email) {
         return userRepository.checkEmailExist(email);
@@ -30,7 +34,9 @@ public class UserServiceImpl implements UserService {
         User user = new User();
         user.setFullName(userDto.getFullName());
         user.setEmail(userDto.getEmail());
-        user.setPassword(userDto.getPassword());
+
+//        String hashedPassword = passwordService.hashPassword(userDto.getPassword());
+//        user.setPassword(hashedPassword);
         user.setRegistrationDate(Date.valueOf(LocalDate.now()));
         userRepository.addUser(user);
 

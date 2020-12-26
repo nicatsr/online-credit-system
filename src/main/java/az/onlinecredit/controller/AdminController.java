@@ -23,7 +23,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Controller
-@RequestMapping("/admin")
+@RequestMapping(value = {"/admin" , "/admin/"})
 @SessionAttributes(names = {"debtor" , "creditDto" , "payment"})
 public class AdminController {
     @Autowired
@@ -43,7 +43,7 @@ public class AdminController {
 
     @GetMapping("/getDebtorForm")
     public ModelAndView getAddDebtor(){
-        ModelAndView mav = new ModelAndView("admin/addDebtor");
+        ModelAndView mav = new ModelAndView("admin/admin-add-debtor");
         DebtorDto debtorDto = new DebtorDto();
         mav.addObject("debtorDto" ,debtorDto);
         return mav;
@@ -57,7 +57,7 @@ public class AdminController {
     ){
         ModelAndView mav = new ModelAndView("redirect:/admin/");
         if (br.hasErrors()){
-            mav.setViewName("admin/addDebtor");
+            mav.setViewName("admin/admin-add-debtor");
         }else{
             debtorService.addDebtor(debtorDto);
         }
@@ -80,7 +80,7 @@ public class AdminController {
                 Optional<Debtor> optionalDebtor =
                         debtorService.getDebtorByFinCode(debtorDto1.getFinCode());
                 if (optionalDebtor.isPresent()){
-                    mav.setViewName("admin/creditForm");
+                    mav.setViewName("admin/creditFormAdmin");
                     CreditDto creditDto = new CreditDto();
                     mav.addObject("debtor" ,optionalDebtor.get());
                     creditDto.setFinCode(optionalDebtor.get().getFinCode());
@@ -106,9 +106,9 @@ public class AdminController {
 
             ModelAndView mav = new ModelAndView();
             if (br.hasErrors()){
-                mav.setViewName("admin/creditForm");
+                mav.setViewName("admin/creditFormAdmin");
             }else{
-                mav.setViewName("admin/creditResult");
+                mav.setViewName("admin/adminCreditResult");
                 BigDecimal monthlyPayment =
                         creditService.calculateMonthlyPayment(creditDto);
                 BigDecimal generalPayment = creditService
@@ -128,12 +128,14 @@ public class AdminController {
             return mav;
         }
 
-        @GetMapping("/addCredit")
-        public void addCredit(
-                @ModelAttribute("creditDto") CreditDto creditDto
-        ){
-            creditService.addCredit(creditDto);
-        }
+    @GetMapping("/addCredit")
+    public ModelAndView addCredit(
+            @ModelAttribute("creditDto") CreditDto creditDto
+    ){
+        ModelAndView mav = new ModelAndView("redirect:/admin/");
+        creditService.addCredit(creditDto);
+        return mav;
+    }
 
         @GetMapping("/excel")
     public ModelAndView generateExcel(

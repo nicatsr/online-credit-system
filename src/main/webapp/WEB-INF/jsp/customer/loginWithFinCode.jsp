@@ -18,13 +18,9 @@
 
 <body class="vertical-layout vertical-menu-modern semi-dark-layout 2-columns  navbar-floating footer-static  " data-open="click" data-menu="vertical-menu-modern" data-col="2-columns" data-layout="semi-dark-layout">
 
-<!-- BEGIN: Header-->
-<%--<jsp:include page="header.jsp"/>--%>
-<!-- END: Header-->
-
 
 <!-- BEGIN: Main Menu-->
-<jsp:include page="menu.jsp"/>
+<jsp:include page="customer-menu.jsp"/>
 <!-- END: Main Menu-->
 <br><br><br><br>
 <section id="multiple-column-form">

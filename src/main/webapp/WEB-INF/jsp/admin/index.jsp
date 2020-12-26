@@ -8,7 +8,7 @@
 
     <jsp:include page="../../common/meta.jsp"/>
     <title>Admin dashboard</title>
-    <jsp:include page="css.jsp"/>
+    <jsp:include page="../../common/css.jsp"/>
 
 </head>
 <!-- END: Head-->
@@ -117,8 +117,8 @@
 <div class="drag-target"></div>
 
 
-<jsp:include page="js.jsp"/>
-<script src="/admin/custom/credit.js" type="text/javascript"></script>
+<jsp:include page="../../common/js.jsp"/>
+<script src="/admin/custom/admin-credit.js" type="text/javascript"></script>
 
 </body>
 <!-- END: Body-->

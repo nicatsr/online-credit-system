@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <spring:url value="/admin/assets" var="assertBaseUrl" htmlEscape="true"/>
-<%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html class="loading" lang="en" data-textdirection="ltr">
 <!-- BEGIN: Head-->
@@ -9,12 +9,7 @@
 
     <jsp:include page="../../common/meta.jsp"/>
     <title>Admin dashboard</title>
-    <jsp:include page="css.jsp"/>
-    <style>
-        .error{
-            color:red;
-        }
-    </style>
+    <jsp:include page="../../common/css.jsp"/>
 
 </head>
 <!-- END: Head-->
@@ -23,9 +18,6 @@
 
 <body class="vertical-layout vertical-menu-modern semi-dark-layout 2-columns  navbar-floating footer-static  " data-open="click" data-menu="vertical-menu-modern" data-col="2-columns" data-layout="semi-dark-layout">
 
-<!-- BEGIN: Header-->
-<%--<jsp:include page="header.jsp"/>--%>
-<!-- END: Header-->
 
 
 <!-- BEGIN: Main Menu-->
@@ -37,7 +29,7 @@
         <div class="col-6 offset-md-4">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">Alıcı əlavə et</h4>
+                    <h4 class="card-title">Müştəri əlavə et</h4>
                 </div>
                 <div class="card-content">
                     <div class="card-body">
@@ -102,12 +94,12 @@
     </div>
 </section>
 
-
 <div class="sidenav-overlay"></div>
 <div class="drag-target"></div>
 
 
-<jsp:include page="js.jsp"/>
+<jsp:include page="../../common/js.jsp"/>
+
 
 </body>
 <!-- END: Body-->
