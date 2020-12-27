@@ -28,9 +28,9 @@ public class CustomerController {
     @Autowired
     private CreditService creditService;
 
-    @GetMapping("/")
+    @GetMapping
     public ModelAndView getCustomerIndex(){
-        ModelAndView mav = new ModelAndView("customer/index");
+        ModelAndView mav = new ModelAndView("/customer/index");
         return mav;
     }
 

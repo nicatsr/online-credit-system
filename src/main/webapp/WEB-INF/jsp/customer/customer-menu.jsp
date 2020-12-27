@@ -3,7 +3,7 @@
 <div class="main-menu menu-fixed menu-dark menu-accordion menu-shadow" data-scroll-to-active="true">
     <div class="navbar-header">
         <ul class="nav navbar-nav flex-row">
-            <li class="nav-item mr-auto"><a class="navbar-brand" href="/admin/">
+            <li class="nav-item mr-auto"><a class="navbar-brand" href="/admin/admind">
                 <div class="brand-logo"></div>
                 <h2 class="brand-text mb-0">Online Credit</h2>
             </a></li>
@@ -19,6 +19,9 @@
 
             </li>
             <li class=" nav-item"><a href="/customer/loginWithFinCode"><i class="feather icon-shopping-cart"></i><span class="menu-title" data-i18n="Ecommerce">Kredit alın</span></a>
+
+            </li>
+            <li class=" nav-item"><a href="/logout"><i class="fa fa-sign-out" aria-hidden="true"></i><span class="menu-title" data-i18n="Ecommerce">Çıxın</span></a>
 
             </li>
         </ul>

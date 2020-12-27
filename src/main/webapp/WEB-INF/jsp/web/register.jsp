@@ -79,6 +79,8 @@
                             </div>
                             </div>
                         </form:form>
+                  &nbsp;  <a href="/"><i class="fa fa-sign-out" aria-hidden="true">Ana səhifə</i>
+                    </a>
                     </div>
                 </div>
             </div>

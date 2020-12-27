@@ -3,7 +3,7 @@
 <div class="main-menu menu-fixed menu-dark menu-accordion menu-shadow" data-scroll-to-active="true">
     <div class="navbar-header">
         <ul class="nav navbar-nav flex-row">
-            <li class="nav-item mr-auto"><a class="navbar-brand" href="/admin/">
+            <li class="nav-item mr-auto"><a class="navbar-brand" href="/admin/admind">
                 <div class="brand-logo"></div>
                 <h2 class="brand-text mb-0">Online Credit</h2>
             </a></li>
@@ -13,7 +13,7 @@
     <div class="shadow-bottom"></div>
     <div class="main-menu-content">
         <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
-            <li class=" nav-item"><a href="/admin/"><i class="feather icon-home"></i><span class="menu-title" data-i18n="Dashboard">Dashboard</span><span class="badge badge badge-warning badge-pill float-right mr-2"></span></a>
+            <li class=" nav-item"><a href="/admin/admind"><i class="feather icon-home"></i><span class="menu-title" data-i18n="Dashboard">Dashboard</span><span class="badge badge badge-warning badge-pill float-right mr-2"></span></a>
 
             </li>
 
@@ -29,9 +29,10 @@
                 <ul class="menu-content">
                     <li><a href="/admin/loginWithFinCode"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="Shop">Fiziki şəxs</span></a>
                     </li>
-                    <li><a href="app-ecommerce-details.html"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="Details">Hüquqi şəxs</span></a>
-                    </li>
                 </ul>
+            </li>
+            <li class=" nav-item"><a href="/logout"><i class="fa fa-sign-out" aria-hidden="true"></i><span class="menu-title" data-i18n="Ecommerce">Çıxın</span></a>
+
             </li>
         </ul>
     </div>

@@ -1,6 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-<spring:url value="/admin/assets" var="assertBaseUrl" htmlEscape="true"/>
+<spring:url value="/admind/assets" var="assertBaseUrl" htmlEscape="true"/>
 <nav class="header-navbar navbar-expand-lg navbar navbar-with-menu floating-nav navbar-light navbar-shadow">
 
     <div class="navbar-wrapper">

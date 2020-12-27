@@ -23,7 +23,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Controller
-@RequestMapping(value = {"/admin" , "/admin/"})
+@RequestMapping(value = {"/adminUser" , "/adminUser/"})
 @SessionAttributes(names = {"debtor" , "creditDto" , "payment"})
 public class AdminController {
     @Autowired
@@ -36,7 +36,7 @@ public class AdminController {
     @Autowired
     private ExcelService excelService;
 
-    @GetMapping("/")
+    @GetMapping
     public ModelAndView getIndex() {
         return new ModelAndView("admin/index");
     }

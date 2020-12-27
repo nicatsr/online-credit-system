@@ -46,7 +46,7 @@
         <nav class="nav-menu d-none d-lg-block">
             <ul>
                 <li class="active"><a href="/">Ana səhifə</a></li>
-                <li><a href="#">Daxil ol</a></li>
+                <li><a href="/login">Daxil ol</a></li>
                 <li><a href="/register">Qeydiyyat</a></li>
 
             </ul>

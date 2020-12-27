@@ -31,20 +31,14 @@ public class RegisterController {
             @ModelAttribute("userDto")@Valid UserDto userDto,
             BindingResult br
     ){
-        ModelAndView mav = new ModelAndView();
+        ModelAndView mav = new ModelAndView("/customer/index");
         if (br.hasErrors()){
             mav.setViewName("web/register");
         }else{
             userService.addUser(userDto);
-            mav.setViewName("customer/index");
-
         }
         return mav;
     }
 
-    @GetMapping("/login")
-    public ModelAndView login(){
-        ModelAndView mav = new ModelAndView("web/login");
-        return mav;
-    }
+
 }
