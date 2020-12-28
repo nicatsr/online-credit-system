@@ -11,6 +11,7 @@ public class PasswordServiceImpl implements PasswordService {
     @Override
     public String hashPassword(String plainPassword) {
         return BCrypt.hashpw(plainPassword, BCrypt.gensalt());
+
     }
 
     @Override

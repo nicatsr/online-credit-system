@@ -24,12 +24,10 @@ public class UserPrincipal implements UserDetails , Serializable {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        System.out.println("get authorities");
         List<GrantedAuthority> authorities = new ArrayList<>();
 
         user.getRoleList().forEach(role -> {
             GrantedAuthority authority = new SimpleGrantedAuthority("ROLE_" + role.name());
-            System.out.println(authority);
             authorities.add(authority);
         });
 

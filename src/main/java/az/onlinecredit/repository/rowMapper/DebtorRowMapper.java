@@ -17,7 +17,6 @@ public class DebtorRowMapper implements RowMapper<Debtor> {
         debtor.setPhoneNumber(rs.getString("phone_number"));
         debtor.setSalary(rs.getBigDecimal("salary"));
         debtor.setFinCode(rs.getString("fin_code"));
-        debtor.setUserId(rs.getLong("user_id"));
         debtor.setGuarantorId(rs.getLong("guarantor_id"));
         return debtor;
     }

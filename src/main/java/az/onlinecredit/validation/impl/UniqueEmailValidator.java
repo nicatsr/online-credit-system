@@ -1,7 +1,8 @@
-package az.onlinecredit.validation;
+package az.onlinecredit.validation.impl;
 
 
 import az.onlinecredit.service.UserService;
+import az.onlinecredit.validation.UniqueEmail;
 import org.springframework.stereotype.Component;
 
 import javax.validation.ConstraintValidator;
@@ -19,7 +20,9 @@ public class UniqueEmailValidator implements ConstraintValidator<UniqueEmail, St
 
     @Override
     public boolean isValid(String value, ConstraintValidatorContext context) {
+        System.out.println("value = " + value);
         boolean exists = userService.emailExist(value);
+        System.out.println("exists = " + exists);
         return !exists;
     }
 }

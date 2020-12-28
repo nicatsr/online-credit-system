@@ -19,5 +19,8 @@ public interface DebtorService {
 
     Optional<DebtorResult> getDebtorResultByFinCode(String finCode);
 
+    boolean checkGuarantorExists(String finCode);
 
+
+    boolean checkCustomerExists(String finCode);
 }

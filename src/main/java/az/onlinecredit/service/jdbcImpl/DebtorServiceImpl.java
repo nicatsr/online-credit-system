@@ -64,4 +64,14 @@ public class DebtorServiceImpl implements DebtorService {
         return debtorRepository.getDebtorResultByFinCode(finCode);
     }
 
+    @Override
+    public boolean checkGuarantorExists(String finCode) {
+        return debtorRepository.checkGuarantorExists(finCode);
+    }
+
+    @Override
+    public boolean checkCustomerExists(String finCode) {
+        return debtorRepository.checkCustomerExists(finCode);
+    }
+
 }

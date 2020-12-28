@@ -57,11 +57,11 @@
         </table>
     </div>
     <div class="offset-3">
-        <a href="/admin/loginWithFinCode" class="btn btn-primary" role="button">Əvvələ</a>
+        <a href="/adminUser/loginWithFinCode" class="btn btn-primary" role="button">Əvvələ</a>
         <c:choose>
             <c:when test="${salaryResult == true}">
-                <a href="/admin/addCredit/" class="btn btn-primary" role="button">Krediti al</a>
-                <a href="/admin/excel" class="btn btn-primary" role="button">Excel yarat</a>
+                <a href="/adminUser/addCredit/" class="btn btn-primary" role="button">Krediti al</a>
+                <a href="/adminUser/excel" class="btn btn-primary" role="button">Excel yarat</a>
             </c:when>
         </c:choose>
 

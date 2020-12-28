@@ -1,6 +1,7 @@
 package az.onlinecredit.validation;
 
-import az.onlinecredit.validation.impl.UniqueEmailValidator;
+import az.onlinecredit.validation.impl.UniqueCustomerValidator;
+import az.onlinecredit.validation.impl.UniqueGuarantorValidator;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;
@@ -13,10 +14,10 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
 @Target({TYPE, FIELD, ANNOTATION_TYPE})
 @Retention(RUNTIME)
-@Constraint(validatedBy = UniqueEmailValidator.class)
+@Constraint(validatedBy = UniqueCustomerValidator.class)
 @Documented
-public @interface UniqueEmail {
-    String message() default "{email.duplicate}";
+public @interface UniqueCustomer {
+    String message() default "{guarantor.duplicate}";
 
     Class<?>[] groups() default {};
 

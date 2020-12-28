@@ -13,21 +13,19 @@
     <div class="shadow-bottom"></div>
     <div class="main-menu-content">
         <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
-            <li class=" nav-item"><a href="/admin/admind"><i class="feather icon-home"></i><span class="menu-title" data-i18n="Dashboard">Dashboard</span><span class="badge badge badge-warning badge-pill float-right mr-2"></span></a>
+            <li class=" nav-item"><a href="/adminUser/"><i class="feather icon-home"></i><span class="menu-title" data-i18n="Dashboard">Dashboard</span><span class="badge badge badge-warning badge-pill float-right mr-2"></span></a>
 
             </li>
 
             <li class=" nav-item"><a href="#"><i class="feather icon-user"></i><span class="menu-title" data-i18n="User">Müştəri əlavə et</span></a>
                 <ul class="menu-content">
-                    <li><a href="/admin/getDebtorForm"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="List">Fiziki şəxs</span></a>
-                    </li>
-                    <li><a href="app-user-view.html"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="View">Hüquqi şəxs</span></a>
+                    <li><a href="/adminUser/getDebtorForm"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="List">Fiziki şəxs</span></a>
                     </li>
                 </ul>
             </li>
             <li class=" nav-item"><a href="#"><i class="feather icon-shopping-cart"></i><span class="menu-title" data-i18n="Ecommerce">Kredit əlavə et</span></a>
                 <ul class="menu-content">
-                    <li><a href="/admin/loginWithFinCode"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="Shop">Fiziki şəxs</span></a>
+                    <li><a href="/adminUser/loginWithFinCode"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="Shop">Fiziki şəxs</span></a>
                     </li>
                 </ul>
             </li>

@@ -1,5 +1,7 @@
 package az.onlinecredit.validation;
 
+import az.onlinecredit.validation.impl.EqualFieldsValidator;
+
 import javax.validation.Constraint;
 import javax.validation.Payload;
 import java.lang.annotation.*;

@@ -8,7 +8,7 @@
 <head>
 
     <jsp:include page="../../common/meta.jsp"/>
-    <title>Admin dashboard</title>
+    <title>Qeydiyyat</title>
     <jsp:include page="../../common/css.jsp"/>
     <style>
         .error{
@@ -79,7 +79,10 @@
                             </div>
                             </div>
                         </form:form>
-                  &nbsp;  <a href="/"><i class="fa fa-sign-out" aria-hidden="true">Ana səhifə</i>
+
+                        &nbsp;  <a href="/"><i class="fa fa-sign-out" aria-hidden="true">Ana səhifə</i>
+
+
                     </a>
                     </div>
                 </div>

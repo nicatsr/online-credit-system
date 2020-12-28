@@ -11,6 +11,12 @@
     <title>Admin dashboard</title>
     <jsp:include page="../../common/css.jsp"/>
 
+    <style>
+        .error{
+            color: red;
+        }
+    </style>
+
 </head>
 <!-- END: Head-->
 

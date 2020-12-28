@@ -10,10 +10,10 @@ public class UserSql {
             " password , registration_date) " +
             " values(:full_name , :email , :password , :registration_date)";
 
-    public static String GET_USER_BY_EMAIL = "select id , full_name , email , " +
-                  " password , registration_date " +
+    public static String GET_USER_BY_EMAIL = "select id , full_name ,password, email , " +
+                  "  registration_date " +
             "from users " +
-            "where email = ?";
+            "where email = :email";
 
     public static String ADD_USER_ROLE = "insert into user_role( user_id , role_id) " +
             "values(:user_id , :role_id)";

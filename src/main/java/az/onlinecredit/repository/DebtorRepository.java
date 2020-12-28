@@ -18,14 +18,8 @@ public interface DebtorRepository {
 
     Optional<DebtorResult> getDebtorResultByFinCode(String finCode);
 
+    boolean checkGuarantorExists(String finCode);
 
 
-
-
-
-
-
-
-
-
+    boolean checkCustomerExists(String finCode);
 }

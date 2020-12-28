@@ -8,7 +8,7 @@
 <head>
 
     <jsp:include page="../../common/meta.jsp"/>
-    <title>Admin dashboard</title>
+    <title>Daxil ol</title>
     <jsp:include page="../../common/css.jsp"/>
     <style>
         .error{

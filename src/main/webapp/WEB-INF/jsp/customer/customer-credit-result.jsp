@@ -61,7 +61,7 @@
         <c:choose>
             <c:when test="${salaryResult == true}">
                 <a href="/customer/addCredit" class="btn btn-primary" role="button">Krediti alın</a>
-                <a href="/admin/excel" class="btn btn-primary" role="button">Excel yaradın</a>
+                <a href="/customer/excel" class="btn btn-primary" role="button">Excel yaradın</a>
             </c:when>
         </c:choose>
 

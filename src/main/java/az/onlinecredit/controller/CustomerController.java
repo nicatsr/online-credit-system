@@ -4,8 +4,11 @@ import az.onlinecredit.model.database.Debtor;
 import az.onlinecredit.model.database.Payment;
 import az.onlinecredit.model.dto.CreditDto;
 import az.onlinecredit.model.dto.DebtorDto;
+import az.onlinecredit.model.dto.ExcelReport;
 import az.onlinecredit.service.CreditService;
 import az.onlinecredit.service.DebtorService;
+import az.onlinecredit.service.ExcelService;
+import az.onlinecredit.view.MortgageExcelView;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -15,6 +18,7 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.validation.Valid;
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.List;
 import java.util.Optional;
 
 @Controller
@@ -27,6 +31,9 @@ public class CustomerController {
 
     @Autowired
     private CreditService creditService;
+
+    @Autowired
+    private ExcelService excelService;
 
     @GetMapping
     public ModelAndView getCustomerIndex(){
@@ -49,6 +56,7 @@ public class CustomerController {
     ){
         ModelAndView mav = new ModelAndView("redirect:/customer/");
         if (br.hasErrors()){
+            br.getAllErrors().forEach(System.out::println);
             mav.setViewName("customer/customer-add-debtor");
         }else{
             debtorService.addDebtor(debtorDto);
@@ -124,5 +132,17 @@ public class CustomerController {
         ModelAndView mav = new ModelAndView("redirect:/customer/");
         creditService.addCredit(creditDto);
         return mav;
+    }
+
+    @GetMapping("/excel")
+    public ModelAndView generateExcel(
+            @ModelAttribute("payment") Payment payment
+    ){
+        ModelAndView mav = new ModelAndView(new MortgageExcelView());
+        List<ExcelReport> list = excelService.generateExcel(payment);
+        mav.addObject("reportList" , list);
+
+        return mav;
+
     }
 }

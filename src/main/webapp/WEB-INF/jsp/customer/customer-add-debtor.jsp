@@ -10,6 +10,11 @@
     <jsp:include page="../../common/meta.jsp"/>
     <title>Admin dashboard</title>
     <jsp:include page="../../common/css.jsp"/>
+    <style>
+        .error{
+            color: red;
+        }
+    </style>
 
 </head>
 <!-- END: Head-->

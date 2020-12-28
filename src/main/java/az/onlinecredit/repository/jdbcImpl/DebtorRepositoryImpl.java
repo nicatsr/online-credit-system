@@ -8,6 +8,7 @@ import az.onlinecredit.repository.rowMapper.DebtorResultRowMapper;
 import az.onlinecredit.repository.rowMapper.DebtorRowMapper;
 import az.onlinecredit.repository.rowMapper.GuarantorRowMapper;
 import az.onlinecredit.repository.sql.DebtorSql;
+import az.onlinecredit.repository.sql.UserSql;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
@@ -98,5 +99,30 @@ public class DebtorRepositoryImpl implements DebtorRepository {
             optionalDebtorResult = Optional.of(list.get(0));
         }
         return optionalDebtorResult;
+    }
+
+    @Override
+    public boolean checkGuarantorExists(String finCode) {
+        boolean isEmailExist = false;
+        MapSqlParameterSource mapSqlParameterSource = new MapSqlParameterSource();
+        mapSqlParameterSource.addValue("fin_code", finCode);
+        int count = namedParameterJdbcTemplate.queryForObject(DebtorSql.CHECK_GUARANTOR_EXISTS, mapSqlParameterSource, Integer.class);
+        if (count > 0){
+            isEmailExist = true;
+        }
+        return isEmailExist;
+
+    }
+
+    @Override
+    public boolean checkCustomerExists(String finCode) {
+        boolean isEmailExist = false;
+        MapSqlParameterSource mapSqlParameterSource = new MapSqlParameterSource();
+        mapSqlParameterSource.addValue("fin_code", finCode);
+        int count = namedParameterJdbcTemplate.queryForObject(DebtorSql.CHECK_CUSTOMER_EXISTS, mapSqlParameterSource, Integer.class);
+        if (count > 0){
+            isEmailExist = true;
+        }
+        return isEmailExist;
     }
 }

@@ -9,6 +9,7 @@ import az.onlinecredit.repository.UserRepository;
 import az.onlinecredit.service.PasswordService;
 import az.onlinecredit.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

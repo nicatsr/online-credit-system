@@ -67,10 +67,12 @@ public class UserRepositoryImpl implements UserRepository {
     @Override
     public Optional<User> getUserByEmail(String email) {
         Optional<User> optionalUser = Optional.empty();
-        Object[] args = new Object[]{email};
-        List<User> list = jdbcTemplate.query(UserSql.GET_USER_BY_EMAIL , userRowMapper , args);
+        MapSqlParameterSource params = new MapSqlParameterSource("email", email);
+        List<User> list = namedParameterJdbcTemplate.query(UserSql.GET_USER_BY_EMAIL ,params, userRowMapper );
+        System.out.println(list);
         if (!list.isEmpty()){
             optionalUser = Optional.of(list.get(0));
+            System.out.println(optionalUser);
         }
 
         return optionalUser;

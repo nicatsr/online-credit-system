@@ -55,7 +55,7 @@ public class AdminController {
             @ModelAttribute("debtorDto")@Valid DebtorDto debtorDto ,
             BindingResult br
     ){
-        ModelAndView mav = new ModelAndView("redirect:/admin/");
+        ModelAndView mav = new ModelAndView("redirect:/adminUser/");
         if (br.hasErrors()){
             mav.setViewName("admin/admin-add-debtor");
         }else{
@@ -132,13 +132,13 @@ public class AdminController {
     public ModelAndView addCredit(
             @ModelAttribute("creditDto") CreditDto creditDto
     ){
-        ModelAndView mav = new ModelAndView("redirect:/admin/");
+        ModelAndView mav = new ModelAndView("redirect:/adminUser/");
         creditService.addCredit(creditDto);
         return mav;
     }
 
         @GetMapping("/excel")
-    public ModelAndView generateExcel(
+        public ModelAndView generateExcel(
             @ModelAttribute("payment") Payment payment
         ){
             ModelAndView mav = new ModelAndView(new MortgageExcelView());

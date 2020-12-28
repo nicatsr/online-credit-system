@@ -31,7 +31,7 @@ public class RegisterController {
             @ModelAttribute("userDto")@Valid UserDto userDto,
             BindingResult br
     ){
-        ModelAndView mav = new ModelAndView("/customer/index");
+        ModelAndView mav = new ModelAndView("/web/login");
         if (br.hasErrors()){
             mav.setViewName("web/register");
         }else{

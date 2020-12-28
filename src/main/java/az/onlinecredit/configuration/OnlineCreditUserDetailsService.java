@@ -27,8 +27,6 @@ public class OnlineCreditUserDetailsService implements UserDetailsService {
             User user = userOptional.get();
             List<Role> roles = userRepository.getUserRoles(user.getId());
             user.setRoleList(roles);
-            System.out.println("user = " + user);
-            roles.forEach(System.out::println);
             principal = new UserPrincipal(user);
         } else {
             throw new UsernameNotFoundException("User " + email + " not found!");

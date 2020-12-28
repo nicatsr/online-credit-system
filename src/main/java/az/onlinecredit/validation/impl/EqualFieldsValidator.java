@@ -1,5 +1,6 @@
-package az.onlinecredit.validation;
+package az.onlinecredit.validation.impl;
 
+import az.onlinecredit.validation.EqualsFields;
 import org.springframework.stereotype.Component;
 
 import javax.validation.ConstraintValidator;
