@@ -16,7 +16,7 @@
 	<description>Online credit system</description>
 
 	<properties>
-		<java.version>1.8</java.version>
+		<java.version>11</java.version>
 	</properties>
 
 	<dependencies>
@@ -32,11 +32,6 @@
 			<optional>true</optional>
 		</dependency>
 		<dependency>
-			<groupId>org.postgresql</groupId>
-			<artifactId>postgresql</artifactId>
-			<scope>runtime</scope>
-		</dependency>
-		<dependency>
 			<groupId>org.apache.tomcat.embed</groupId>
 			<artifactId>tomcat-embed-jasper</artifactId>
 		</dependency>
@@ -50,27 +45,38 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-
-
-		<!-- https://mvnrepository.com/artifact/org.webjars/bootstrap -->
 		<dependency>
 			<groupId>org.webjars</groupId>
 			<artifactId>bootstrap</artifactId>
 			<version>4.5.3</version>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.webjars/jquery -->
 		<dependency>
 			<groupId>org.webjars</groupId>
 			<artifactId>jquery</artifactId>
 			<version>3.5.1</version>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-jdbc -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-jdbc</artifactId>
 			<version>2.4.1</version>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/jstl/jstl -->
+		<dependency>
+			<groupId>com.oracle.database.jdbc</groupId>
+			<artifactId>ojdbc8</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.5</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jsp-api</artifactId>
+			<version>2.0</version>
+			<scope>provided</scope>
+		</dependency>
 		<dependency>
 			<groupId>jstl</groupId>
 			<artifactId>jstl</artifactId>
@@ -81,28 +87,32 @@
 			<artifactId>poi</artifactId>
 			<version>4.1.2</version>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-validator -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-validator</artifactId>
 			<version>6.1.6.Final</version>
 		</dependency>
 
-		<!-- https://mvnrepository.com/artifact/javax.validation/validation-api -->
 		<dependency>
 			<groupId>javax.validation</groupId>
 			<artifactId>validation-api</artifactId>
 			<version>2.0.1.Final</version>
 		</dependency>
-<!--		 https://mvnrepository.com/artifact/org.springframework.security/spring-security-core-->
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
 		</dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
 
-	</dependencies>
+    </dependencies>
 
 	<build>
+		<finalName>ROOT</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>

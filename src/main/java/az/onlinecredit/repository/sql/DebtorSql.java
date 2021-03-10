@@ -11,7 +11,7 @@ public class DebtorSql {
             " from guarantor " +
             " where fin_code = ? ";
 
-    public static String ADD_DEBTOR = " insert into debtor ( related_person , phone_number , " +
+    public static String ADD_DEBTOR = " insert into debtor (related_person , phone_number , " +
             " salary , fin_code , guarantor_id ) " +
             " values ( :related_person , :phone_number , :salary ," +
             " :fin_code ,:guarantor_id ) ";

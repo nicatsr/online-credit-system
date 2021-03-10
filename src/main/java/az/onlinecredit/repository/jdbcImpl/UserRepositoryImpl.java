@@ -69,10 +69,8 @@ public class UserRepositoryImpl implements UserRepository {
         Optional<User> optionalUser = Optional.empty();
         MapSqlParameterSource params = new MapSqlParameterSource("email", email);
         List<User> list = namedParameterJdbcTemplate.query(UserSql.GET_USER_BY_EMAIL ,params, userRowMapper );
-        System.out.println(list);
         if (!list.isEmpty()){
             optionalUser = Optional.of(list.get(0));
-            System.out.println(optionalUser);
         }
 
         return optionalUser;

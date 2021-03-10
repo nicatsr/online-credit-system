@@ -20,9 +20,7 @@ public class UniqueEmailValidator implements ConstraintValidator<UniqueEmail, St
 
     @Override
     public boolean isValid(String value, ConstraintValidatorContext context) {
-        System.out.println("value = " + value);
         boolean exists = userService.emailExist(value);
-        System.out.println("exists = " + exists);
         return !exists;
     }
 }

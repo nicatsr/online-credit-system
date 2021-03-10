@@ -4,7 +4,11 @@ document.querySelector('#getCreditResultByFinCode').addEventListener('click' , g
 
 function getAllCreditResults(){
     document.getElementById('credit').style.display = "table";
-    var url = "http://localhost:8080/result/list";
+    let protocol = location.protocol;
+    let domain = location.hostname;
+    let port = location.port;
+    var url = protocol +"//" + domain + ":" + port + "/result/list";
+
     var xhr = new XMLHttpRequest();
 
     xhr.open('GET' , url , true);
@@ -40,8 +44,12 @@ function getAllCreditResults(){
 
 function getDebtorResultByFinCode(){
     document.getElementById('customer').style.display = "table";
+        let protocol = location.protocol;
+        let domain = location.hostname;
+        let port = location.port;
+
         var finCode = document.getElementById('debtorFinCode').value;
-        var url = "http://localhost:8080/result/debtorResult/" + finCode;
+        var url = protocol +"//" + domain + ":" + port + "/result/debtorResult/" + finCode;
 
         var xhr = new XMLHttpRequest();
 
@@ -70,8 +78,12 @@ function getDebtorResultByFinCode(){
 
 function getCreditResultByFinCode(){
     document.getElementById('creditResult').style.display = "table";
+    let protocol = location.protocol;
+    let domain = location.hostname;
+    let port = location.port;
+
     var finCode = document.getElementById('creditResultFinCode').value;
-    var url = "http://localhost:8080/result/creditResult/" + finCode;
+    var url = protocol +"//" + domain + ":" + port + "/result/creditResult/" + finCode;
 
     var xhr = new XMLHttpRequest();
 

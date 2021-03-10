@@ -93,7 +93,7 @@
 <div class="sidenav-overlay"></div>
 <div class="drag-target"></div>
 
-<script src="/admin/custom/customer-credit.js" type="text/javascript"></script>
+<script src="${pageContext.request.contextPath}/admin/custom/customer-credit.js" type="text/javascript"></script>
 
 <jsp:include page="../../common/js.jsp"/>
 

@@ -7,6 +7,7 @@ import az.onlinecredit.validation.UniqueEmail;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
+import java.util.Objects;
 
 @EqualsFields(field1 = "password" , field2 = "passwordRepetition" , message = "{user.equalFields.notSame}")
 public class UserDto {
@@ -66,5 +67,21 @@ public class UserDto {
                 ", password='" + password + '\'' +
                 ", passwordRepetition='" + passwordRepetition + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        UserDto userDto = (UserDto) o;
+        return fullName.equals(userDto.fullName) &&
+                email.equals(userDto.email) &&
+                password.equals(userDto.password) &&
+                passwordRepetition.equals(userDto.passwordRepetition);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(fullName, email, password, passwordRepetition);
     }
 }

@@ -13,9 +13,4 @@ public class PasswordServiceImpl implements PasswordService {
         return BCrypt.hashpw(plainPassword, BCrypt.gensalt());
 
     }
-
-    @Override
-    public boolean passwordsMatch(String plainPassword, String hashedPassword) {
-        return BCrypt.checkpw(plainPassword, hashedPassword);
-    }
 }

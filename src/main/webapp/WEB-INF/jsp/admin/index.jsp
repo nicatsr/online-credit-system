@@ -1,6 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-<spring:url value="/admind/assets" var="assertBaseUrl" htmlEscape="true"/>
+<spring:url value="/admin/assets" var="assertBaseUrl" htmlEscape="true"/>
 <!DOCTYPE html>
 <html class="loading" lang="en" data-textdirection="ltr">
 <!-- BEGIN: Head-->
@@ -116,11 +116,8 @@
 <div class="sidenav-overlay"></div>
 <div class="drag-target"></div>
 
-
 <jsp:include page="../../common/js.jsp"/>
-<script src="/admin/custom/admin-credit.js" type="text/javascript"></script>
-
+<script src="${pageContext.request.contextPath}/admin/custom/admin-credit.js" type="text/javascript"></script>
 </body>
 <!-- END: Body-->
-
 </html>

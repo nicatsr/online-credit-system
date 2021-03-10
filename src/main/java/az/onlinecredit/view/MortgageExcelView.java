@@ -38,7 +38,6 @@ public class MortgageExcelView extends AbstractXlsView {
                     row.createCell(0).setCellValue(report.getMonth());
                     row.createCell(1).setCellValue(report.getGeneralPayment().toString());
                     row.createCell(2).setCellValue(report.getMonthlyPayment().toString());
-
                 }
 
                 workbook.close();

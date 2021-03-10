@@ -5,11 +5,9 @@ import az.onlinecredit.model.database.User;
 import az.onlinecredit.model.database.UserRole;
 import az.onlinecredit.model.dto.UserDto;
 import az.onlinecredit.repository.UserRepository;
-//import az.onlinecredit.service.PasswordService;
 import az.onlinecredit.service.PasswordService;
 import az.onlinecredit.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -43,14 +41,13 @@ public class UserServiceImpl implements UserService {
         userRepository.addUser(user);
 
         Optional<User> optionalUserFromDb = userRepository.getUserByEmail(user.getEmail());
-        User userFromDb = null;
+        User userFromDb;
         if (optionalUserFromDb.isPresent()){
             userFromDb = optionalUserFromDb.get();
+            UserRole userRole = new UserRole();
+            userRole.setUserId(userFromDb.getId());
+            userRole.setRoleId(Role.CUSTOMER.getValue());
+            userRepository.addUserRole(userRole);
         }
-        UserRole userRole = new UserRole();
-        userRole.setUserId(userFromDb.getId());
-        userRole.setRoleId(Role.CUSTOMER.getValue());
-        userRepository.addUserRole(userRole);
-
     }
 }
